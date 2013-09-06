@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "/home/jagat/eclipse_workspace/NYTWorkTokenize/src/CloseWords.py", line 57, in <module>
+    handleFile(fl)
+  File "/home/jagat/eclipse_workspace/NYTWorkTokenize/src/CloseWords.py", line 25, in handleFile
+    for [articleId, date, entityType, entity, entityToSearch] in entities:
+ValueError: need more than 4 values to unpack

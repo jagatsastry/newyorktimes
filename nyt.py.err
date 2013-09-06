@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "/home/jagat/eclipse_workspace/NYTWorkTokenize/src/CloseWords.py", line 72, in <module>
+    p.map(handleFile, files)
+  File "/usr/lib/python2.7/multiprocessing/pool.py", line 250, in map
+    return self.map_async(func, iterable, chunksize).get()
+  File "/usr/lib/python2.7/multiprocessing/pool.py", line 554, in get
+    raise self._value
+IOError: [Errno 28] No space left on device: '/home/jagat/nyt/data/xmls/2003/10/02/1524086.xml.word'

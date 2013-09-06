@@ -1,0 +1,27 @@
+Tools
+===============================================================================
+The New York Times Corpus includes software written in the Java Programming Language for parsing corpus documents from xml into a memory resident object. The tools can be found in the 'tools/' directory, which is arranged as follows:
+
+tools/src
+	The source code for the tools.
+
+tools/build/timestools.jar
+	A jarfile containing the compiled tools.
+	
+tools/docs/
+-	Javadocs for the tools classes
+
+To build the tools from source, you must have apache ant installed (http://ant.apache.org/).  Once ant is installed, change into the 'tools' directory and issue the command 'ant'.  This will create a file 'timestools.jar' in the 'tools/build/' directory. 
+
+Below is an example of how to  use the tools in your java programs.
+
+import com.nytlabs.ldc.NYTimesLDCDocumentParser;
+import com.nytlabs.util.Utilities;
+
+...
+
+	NYTimesLDCDocumentParser parser = new NYTimesLDCDocumentParser();
+	File file = new File("/docs/1987/01/01/0000001.xml");
+	NYTimesLDCDocument timesDocument = 	
+		parser.parseNYTimesLDCDocumentFromFile(file, false);
+...

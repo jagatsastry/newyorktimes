@@ -1,0 +1,10 @@
+Traceback (most recent call last):
+  File "/home/jagat/nyt/StoreSql.py", line 86, in <module>
+    p.map(handleFile, files)
+  File "/usr/lib/python2.7/multiprocessing/pool.py", line 250, in map
+    return self.map_async(func, iterable, chunksize).get()
+  File "/usr/lib/python2.7/multiprocessing/pool.py", line 554, in get
+    raise self._value
+AttributeError: 'NoneType' object has no attribute 'fetch_row'
+/usr/lib/python2.7/dist-packages/MySQLdb/cursors.py:206: Warning: Data truncated for column 'pub_date' at row 1
+  r = r + self.execute(query, a)

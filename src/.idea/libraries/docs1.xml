@@ -1,0 +1,10 @@
+<component name="libraryTable">
+  <library name="docs1">
+    <CLASSES />
+    <JAVADOC>
+      <root url="file://$USER_HOME$/mysql-connector-java-5.1.26/docs" />
+      <root url="file://$PROJECT_DIR$/../tools/docs" />
+    </JAVADOC>
+    <SOURCES />
+  </library>
+</component>
