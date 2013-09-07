@@ -18,13 +18,15 @@ db = MySQLdb.connect(host="localhost", # your host, usually localhost
 #db.autocommit(True)                      
 c = db.cursor()
 
+
 #for fl in [ root + "/" + x.strip() for x in open(root + "/fileListShort.txt").readlines()]:
 def handleFile(fl): 
     print fl
+    storeEnt(fl)
+    storeWord(fl)
 
-    
+def storeEnt(fl): 
     entf = None
-    wordf = None
     if os.path.exists(fl + ".ent"):
         entf = open(fl + ".ent", "rU")
         entities = [tuple(r)  for r in csv.reader(entf, delimiter="\t") if len(r) == 5]
@@ -32,44 +34,22 @@ def handleFile(fl):
           ( article_id, pub_date, entity_type, entity, entity_to_search ) 
           VALUES (%s, %s, %s, %s, %s)""",
           entities)
-    '''
-        for record in entities:
-            if len(record) != 5:
-              print "ALERT: ",fl,record,len(record)
-              sys.stdout.flush()
-              continue
-            articleId = record[0]
-            pub_date = record[1]
-            entityType = record[2]
-            entity = record[3]
-            entityToSearch = record[4]
-    '''        
-    if os.path.exists(fl + ".word"):
-        wordf = open(fl + ".word", "rU")
-        words = [tuple(r) for r in csv.reader(wordf, delimiter="\t") if len(r) == 5]
-        c.executemany("""INSERT INTO words
-          (article_id, entity, sequence, entity_to_search, proximity) 
-          VALUES (%s, %s, %s, %s, %s)""",
-          words)
-    '''        
-        for record in words:
-            if len(record) != 5:
-              print "ALERT: ",fl,record,len(record)
-              sys.stdout.flush()
-              continue
-    
-            articleId = record[0]
-            entity = record[1]
-            sequence = record[2]
-            entityToSearch = record[3]
-            proximity = record[4]
-    '''
     if entf != None:
       entf.close()
+
+def storeWord(fl):
+    wordf = None
+    if os.path.exists(fl + ".word"):
+        wordf = open(fl + ".word")
+        words = [tuple(r) for r in csv.reader(wordf, delimiter="\t")]
+        c.executemany("""INSERT INTO words
+          (article_id, entity, sequence, word, lemma, pos_str, pos, proximity) 
+          VALUES (%s, %s, %s, %s, %s, %s, %s, %s)""",
+          words)
+        db.commit()
+        print "Stored",len(words),"records into SQL from",fl + ".word"
     if wordf != None:
       wordf.close()
-    #print words
-    #print sentences
     
 if __name__ == "__main__":
   #if len(sys.argv) == 1:
