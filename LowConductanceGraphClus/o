@@ -1,0 +1,79 @@
+1997_11.graph
+3
+Reading graph
+
+There are 780 edges in g
+
+There are 40 vertices in g
+
+0 : 0
+1 : 6741
+2 : 5340
+3 : 7157
+4 : 1536
+5 : 4612
+6 : 5960
+7 : 4738
+8 : 4131
+9 : 4993
+10 : 4709
+11 : 4319
+12 : 0
+13 : 5106
+14 : 4890
+15 : 4424
+16 : 4078
+17 : 8045
+18 : 7586
+19 : 8042
+20 : 6250
+21 : 6017
+22 : 4135
+23 : 5775
+24 : 2370
+25 : 6811
+26 : 4581
+27 : 6174
+28 : 0
+29 : 6997
+30 : 6527
+31 : 7319
+32 : 6148
+33 : 6655
+34 : 6801
+35 : 7035
+36 : 4235
+37 : 6283
+38 : 7436
+39 : 5408
+40 : 4862
+Done reading graph
+
+There are 0 singletons 
+
+Finding a new hub took 0 seconds
+Hub#1 is 17 with out-degree 39
+PageRank computation took 0.08 seconds
+Top-k is 40
+Cut at first-40 elements with conductance 0
+Cluster size is 40 so DROP cluster!
+
+Found cluster count is 0
+
+
+
+0 clusters are dropped due to large overlap!
+
+Final cluster count is 0
+
+
+Rest-INIT size is 40 and #nodes in graph is 40
+
+Number of components in rest is 2
+
+Component sizes are:
+Component-1: 1
+Component-2: 40
+
+Cluster-1 size is 40 with conductance 0 (0/1560)
+Cluster-2 size is 0 with conductance -nan (0/0)
